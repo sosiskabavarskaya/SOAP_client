@@ -1,9 +1,11 @@
-import client.SoapClass
+import client.SOAPClient
 
 fun main(){
-    val client = SoapClass()
-    val a = 228
-    val b = 1337
-    val result = client.addNumber(a, b)
-    println("res is $result")
+    val client = SOAPClient()
+    val namespace = "https://fias.nalog.ru/WebServices/Public/DownloadService.asmx/"
+    val url = "https://fias.nalog.ru/WebServices/Public/DownloadService.asmx"
+    val method = "GetAllDownloadFileInfo"
+
+    val soapResponseObject = client.makeFiasRequest(namespace, url, method)
+    System.out.println("response is: " + soapResponseObject.toString())
 }
