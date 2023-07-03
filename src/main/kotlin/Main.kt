@@ -1,11 +1,10 @@
-import client.SOAPClient
+import controller.SOAPController
 
 fun main(){
-    val client = SOAPClient()
-    val namespace = "https://fias.nalog.ru/WebServices/Public/DownloadService.asmx/"
-    val url = "https://fias.nalog.ru/WebServices/Public/DownloadService.asmx"
-    val method = "GetAllDownloadFileInfo"
+    val controller = SOAPController()
 
-    val soapResponseObject = client.makeFiasRequest(namespace, url, method)
-    System.out.println("response is: " + soapResponseObject.toString())
+    val soapResponseObject = controller.GetAllDownloadFileInfo()
+    if (soapResponseObject != null) {
+        println("Response length is: " + soapResponseObject.size)
+    }
 }
