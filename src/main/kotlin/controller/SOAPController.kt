@@ -29,7 +29,6 @@ class SOAPController {
                 val entity = this.parseSoapObjectToEntity(item)
                 objectList.add(entity)
             }
-            System.out.println("list is: $objectList")
             return objectList
         } catch (e: Exception) {
             e.printStackTrace()
